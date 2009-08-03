@@ -4,7 +4,6 @@ require 'rake/rdoctask'
 require 'rake/testtask'
 require 'fileutils'
 
-Gem::manage_gems
 include FileUtils
 
 require 'rake/gempackagetask'
@@ -14,7 +13,7 @@ spec = Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.8.6'
   s.name = "functor"
   s.rubyforge_project = 'functor'
-  s.version = "0.5.1"
+  s.version = "0.6.0"
   s.authors = [ "Dan Yoder", "Matthew King", "Lawrence Pit" ]
   s.email = 'dan@zeraweb.com'
   s.homepage = 'http://dev.zeraweb.com/'
