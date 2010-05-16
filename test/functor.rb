@@ -24,7 +24,7 @@ describe "Dispatch on instance method should" do
   end
   
   specify "raise an exception if there is no matching value" do
-    lambda { @r.repeat( 7.3 ) }.should.raise(Functor::NoMatch)
+    lambda { @r.repeat( 7.3 ) }.should raise_error(Functor::NoMatch)
   end
 end
 

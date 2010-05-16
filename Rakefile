@@ -13,7 +13,7 @@ spec = Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.8.6'
   s.name = "functor"
   s.rubyforge_project = 'functor'
-  s.version = "0.6.0"
+  s.version = "0.6.1"
   s.authors = [ "Dan Yoder", "Matthew King", "Lawrence Pit" ]
   s.email = 'dan@zeraweb.com'
   s.homepage = 'http://dev.zeraweb.com/'
@@ -56,6 +56,8 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.add([ 'doc/README', 'doc/HISTORY', 'lib/*.rb' ])
 end
 
-Rake::TestTask.new(:test) do |t|
-  t.test_files = FileList["test/*.rb"].exclude("test/helpers.rb")
+task :test do
+	files = FileList["test/**/*.rb"].exclude("test/helpers.rb")
+	sh "spec -c #{files}"
 end
+
