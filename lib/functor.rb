@@ -46,7 +46,7 @@ class Functor
         # Recursively redefine The Method using the newest and previous incarnations
         define_method( name ) do | *args |
           match_args = with_self ? [self] + args : args
-          sig = match_args.hash
+          sig = match_args
           if meth = mc[3][sig]  # check caches from top down
             meth[0].bind(self).call(*args)
           elsif meth = mc[2][sig]
